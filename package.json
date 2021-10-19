@@ -3,24 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "connected-react-router": "^6.9.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.6.7",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@openapitools/openapi-generator-cli": "^2.2.3",
+    "@soluzioni-futura/openapi-mock-server": "^0.5.1",
+    "wget-improved": "^3.2.1",
+    "prettier": "2.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-api": "openapi-generator-cli generate -i src/api/specification/warp-etn-device-checker-test-1.0-resolved.json -g typescript-fetch -o src/api/generated --additional-properties typescriptThreePlus=true",
+    "postgenerate-api": "prettier --write 'src/api/generated/**/*.{ts,js,tsx,jsx,json,scss,md,yaml,html}'"
   },
   "eslintConfig": {
     "extends": [
